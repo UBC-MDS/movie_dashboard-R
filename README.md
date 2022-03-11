@@ -1,9 +1,5 @@
 # :movie_camera: Netflix Movie Dashboard :movie_camera
 
-[*Visualize movie trends on the world's most popular streaming platform!*](https://netflixmoviedashboard.herokuapp.com/) :tv:
-
-![Dashboard Overview](image/dash-overview.png "Dashboard Overview")
-
 ## About
 
 Filming movies is an expensive and time-consuming process, so it's important that studios create movies that will appeal to large segments of the population. Netflix, one of the most popular streaming services available, is an ideal candidate for film studios to gather insights about global movie trends. Our Netflix Movie dashboard will help users make decisions about which types of films will most likely appeal to streaming platforms and their audiences. :tada:
@@ -43,8 +39,7 @@ Interesting in contributing to this dashboard? Make sure to check out our [Code 
 This dashboard was created using `Altair` and `Dash` and is powered by `Heroku`. Check out these onboarding documents to learn more about these tools:
 
 - [DSCI 531: Visualization I](https://pages.github.ubc.ca/mds-2021-22/DSCI_531_viz-1_students/intro.html): A great starting point for those new to Altair
-- [Building a basic Dash app](https://pages.github.ubc.ca/mds-2021-22/DSCI_532_viz-2_students/materials/lectures/2-building-a-basic-dash-app.html): Excellent step by step guide from UBC's Master of Data Science DSCI 532 class.
-- [Deploying Dash Apps](https://dash.plotly.com/deployment): A step by step guide to setting up Heroku with Python
+- [Building a basic Dash app](https://pages.github.ubc.ca/mds-2021-22/DSCI_532_viz-2_students/materials/lectures/2-building-a-basic-dash-app.html): Excellent step by step guide from UBC's Master of Data Science DSCI 532 class
 
 ## License
 
