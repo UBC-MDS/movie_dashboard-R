@@ -1,4 +1,4 @@
-# :movie_camera: Netflix Movie Dashboard :movie_camera
+# :movie_camera: Netflix Movie Dashboard :movie_camera:
 
 ## About
 
