@@ -12,6 +12,24 @@ suf_data <- read.csv(file = 'data/processed/sufang_clean_df.csv')
 j_data <- read_csv("data/processed/jasmine_df.csv")
 data <- read_csv("data/processed/clean_df.csv")
 
+# drop down list
+drop_list <- list(
+  "TV-G",
+  "TV-14",
+  "TV-MA",
+  "TV-PG",
+  "R",
+  "TV-Y7",
+  "TV-Y",
+  "PG",
+  "G",
+  "PG-13",
+  "NR",
+  "UR",
+  "TV-Y7-FV",
+  "NC-17")
+
+
 j_data <- j_data %>% filter(is.na(j_data$cast_count) == FALSE)
 
 cast_data <- j_data %>% 
@@ -32,7 +50,9 @@ app$layout(
             dbcCardBody(
               list(h4("Netflix Movie Dashboard: Visualize movie trends on the world's most popular streaming platform!", className = "card-title")),
               dbcCol(
-                style=list("font-weight"="bold", "font-size"="85%"),
+                style=list("font-weight"="bold", 
+                           "font-size"="85%",
+                           "font-family"= "Garamond"),
               ), # dbcCol
             ), # dbcCardBody
             color ="dark", 
@@ -86,7 +106,7 @@ app$layout(
                     
                     dccDropdown(
                       id='rating-select',
-                      options = data$rating %>%
+                      options = drop_list %>%
                         purrr::map(function(rating,pop) list(label = rating, value = rating)),
                       value=list("TV-G","TV-MA", "TV-14","TV-Y7"),
                       multi=TRUE
@@ -194,10 +214,12 @@ app$callback(
       xlim(1942, xcol) +
       theme(plot.title = element_text(hjust = 0.5, color = "white"),
             panel.background = element_blank(),
-            panel.grid = element_line(color = "gray90"),
+            panel.grid = element_line(color = "#7a7979"),
             axis.line = element_line(colour = "black"),
             plot.background = element_rect(fill = '#171614', colour = '#171614'),
-            axis.text = element_text(color="white")
+            axis.text = element_text(color="white"),
+            axis.title.x = element_text(color="white"),
+            axis.title.y = element_text(color="white")
       )
     ggplotly(p + aes(text = release_year), tooltip = 'release_year')  %>% layout(plot_bgcolor = '000000')
   }
@@ -219,16 +241,35 @@ app$callback(
     plot  <- ggplot(df ,aes(x = release_year, y = count, color = rating)) +
       geom_line()+      
       scale_size(range = c(2, 12)) +
-      ggtitle('Movie rating in Netflix in different years') +
-      labs(x = 'Years', y= "Number of movie") +
+      ggtitle('Movie Rating in Netflix Over Time') +
+    labs(x = 'Years', y= "Number of movie", color="white") +
+      scale_color_manual(name="Movie Rating", 
+                         values=c("#CE2626", 
+                                  "#C864ED", 
+                                  "#FBBA72", 
+                                  "#EFAAC4", 
+                                  "#A56124", 
+                                  "#D30C7B",
+                                  "#ff0067", 
+                                  "#FF3C38", 
+                                  "#FF8C42", 
+                                  "#F991CC", 
+                                  "#A05BFA", 
+                                  "#9F2042",
+                                  "#E63946",
+                                  "#F58549")) +
       theme(plot.title = element_text(hjust = 0.5, color ="white"),
             panel.background = element_blank(),
-            panel.grid = element_line(color = "gray90"),
+            panel.grid = element_line(color = "#7a7979"),
             axis.line = element_line(colour = "black"),
             plot.background = element_rect(fill = '#171614', colour = '#171614'),
             legend.background = element_rect(fill="#171614"),
             legend.text = element_text(color="white"),
-            axis.text = element_text(color="white")) 
+            legend.title = element_text(color="white"),
+            axis.text = element_text(color="white"),
+            axis.title.x = element_text(color="white"),
+            axis.title.y = element_text(color="white")
+            ) 
     
     ggplotly(plot)  %>% layout(plot_bgcolor = '000000')
   }
@@ -246,15 +287,18 @@ app$callback(
     p1 <- ggplot(data_filt, aes(x = forcats::fct_infreq(country)),text = name) +
       geom_bar(stat = 'count', color = "black", fill = "red2") +
       ggtitle('Which Countries Makes the Most Movies?') +
-      labs(x = 'Country') +
-      labs(y = 'Number of Movies Produced') +
+      labs(x = 'Country', color="white") +
+      labs(y = 'Number of Movies Produced', color="white") +
       theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
             axis.text = element_text(color="white"),
             plot.title = element_text(hjust = 0.5, color ="white"),
             panel.background = element_blank(),
-            panel.grid = element_line(color = "gray90"),
+            panel.grid = element_line(color = "#7a7979"),
             axis.line = element_line(colour = "black"),
-            plot.background = element_rect(fill = '#171614', colour = '#171614'))
+            plot.background = element_rect(fill = '#171614', colour = '#171614'),
+            axis.title.x = element_text(color="white"),
+            axis.title.y = element_text(color="white")
+            )
     ggplotly(p1) %>% layout(plot_bgcolor = '000000')
   }
 )
