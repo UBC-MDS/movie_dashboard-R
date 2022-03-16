@@ -36,7 +36,7 @@ cast_data <- j_data %>%
   group_by(release_year) %>% 
   summarize(mean_cast_count = mean(cast_count))
 
-app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
+app <- Dash$new(external_stylesheets = dbcThemes$DARKLY)
 
 
 app$layout(
