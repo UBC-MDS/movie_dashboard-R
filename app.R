@@ -56,7 +56,7 @@ app$layout(
               ), # dbcCol
             ), # dbcCardBody
             color ="dark", 
-            inverse=TRUE
+            inverse=FALSE
           ) #dbcCard
         ), # list
       ), # dbcRow
@@ -106,6 +106,8 @@ app$layout(
                     
                     dccDropdown(
                       id='rating-select',
+                      style= list('color'= '#000000',
+                          'background-color'= '#000000'),
                       options = drop_list %>%
                         purrr::map(function(rating,pop) list(label = rating, value = rating)),
                       value=list("TV-G","TV-MA", "TV-14","TV-Y7"),
@@ -208,6 +210,7 @@ app$callback(
       ggplot(aes(x=release_year,
                  y=mean_cast_count)) +
       geom_point(fill= "red2", color = "black", shape = 21, size = 3) +
+      geom_smooth(method ="lm", color = "#FBBA72", se = FALSE) +
       ggtitle("Average Cast Size Per Year") +
       xlab("Release Year") +
       ylab("Avg. Cast Size") +
