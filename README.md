@@ -1,6 +1,6 @@
 # :movie_camera: Netflix Movie Dashboard :movie_camera:
 
-[Visualize movie trends on the world's most popular streaming platform!(http://0.0.0.0:8050/)
+(Visualize movie trends on the world's most popular streaming platform)[https://movie-dashboard-r.herokuapp.com/]
 
 ## About
 
