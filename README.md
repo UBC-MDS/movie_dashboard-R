@@ -40,9 +40,9 @@ Movie rating is an important factor when considering audience -- rating a film R
 
 Interesting in contributing to this dashboard? Make sure to check out our [Code of Conduct] (<https://github.com/UBC-MDS/movie_dashboard/blob/main/CODE_OF_CONDUCT.md>)!
 
-This dashboard was created using `Altair` and `Dash` and is powered by `Heroku`. Check out these onboarding documents to learn more about these tools:
+This dashboard was created using `ggplot2` and `Dash` and is powered by `Heroku`. Check out these onboarding documents to learn more about these tools:
 
-- [DSCI 531: Visualization I](https://pages.github.ubc.ca/mds-2021-22/DSCI_531_viz-1_students/intro.html): A great starting point for those new to Altair
+- [DSCI 531: Visualization I](https://pages.github.ubc.ca/mds-2021-22/DSCI_531_viz-1_students/intro.html): A great starting point for those new to ggplot
 - [Building a basic Dash app](https://pages.github.ubc.ca/mds-2021-22/DSCI_532_viz-2_students/materials/lectures/2-building-a-basic-dash-app.html): Excellent step by step guide from UBC's Master of Data Science DSCI 532 class
 
 ## License
