@@ -2,7 +2,7 @@
 
 [Visualize movie trends on the world's most popular streaming platform](https://movie-dashboard-r.herokuapp.com/)
 
-Note: Heroku apps "sleep" after 30 minutes of inactivity, so it may take a minute to load! 
+*Note: Heroku apps "sleep" after 30 minutes of inactivity, so it may take a minute to load!* 
 
 ## About
 
